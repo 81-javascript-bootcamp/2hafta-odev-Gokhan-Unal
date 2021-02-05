@@ -35,6 +35,8 @@ bosluk icerebilir, ancak bosluk haridcindeki isimler en az 2 karakterden olusmal
 
 function isValidName(name) {
   /// your code here
+  const pattern = /([A-Za-z]\w{2,})+([A-Za-z]\w{2,})*/gi
+  return !!name.match(pattern)
 }
 
 
