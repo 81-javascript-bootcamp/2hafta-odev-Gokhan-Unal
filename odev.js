@@ -8,13 +8,19 @@ var car = {
     registrationNumber: "GA12345",
     brand: "Toyota",
 
-    displayDetails: function(){
+    displayDetails: function() {
         console.log(this.registrationNumber + " " + this.brand);
     }
 }
 
 var myCarDetails =  car.displayDetails;
-myCarDetails();
+myCarDetails.call(car) // call way
+myCarDetails.apply(car) // apply way
+var bindWay = myCarDetails.bind(car)
+bindWay()
+
+
+
 
 
 /** 
