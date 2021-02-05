@@ -59,6 +59,8 @@ function summary(genre, year) {
   )
 }
 
-
-
+summary.call(book, book.title, book.author)
+summary.apply(book, [book.title, book.author])
+const bindSummary = summary.bind(book)
+bindSummary()
 
