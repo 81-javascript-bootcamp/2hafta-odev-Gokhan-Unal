@@ -8,13 +8,19 @@ var car = {
     registrationNumber: "GA12345",
     brand: "Toyota",
 
-    displayDetails: function(){
+    displayDetails: function() {
         console.log(this.registrationNumber + " " + this.brand);
     }
 }
 
 var myCarDetails =  car.displayDetails;
-myCarDetails();
+myCarDetails.call(car) // call way
+myCarDetails.apply(car) // apply way
+var bindWay = myCarDetails.bind(car)
+bindWay()
+
+
+
 
 
 /** 
@@ -29,6 +35,8 @@ bosluk icerebilir, ancak bosluk haridcindeki isimler en az 2 karakterden olusmal
 
 function isValidName(name) {
   /// your code here
+  const pattern = /([A-Za-z]\w{2,})+([A-Za-z]\w{2,})*/gi
+  return !!name.match(pattern)
 }
 
 
@@ -51,6 +59,8 @@ function summary(genre, year) {
   )
 }
 
-
-
+summary.call(book, book.title, book.author)
+summary.apply(book, [book.title, book.author])
+const bindSummary = summary.bind(book)
+bindSummary()
 
